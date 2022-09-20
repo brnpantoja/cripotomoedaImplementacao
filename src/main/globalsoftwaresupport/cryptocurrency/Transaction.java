@@ -44,9 +44,9 @@ public class Transaction {
         // as transações têm 2 partes: enviar um valor para o destinatário + enviar o (valor do saldo)
         // de volta ao remetente
         // enviar valor ao destinatário
-        outputs.add(new TransactionOutput(this.receiver, amount, transactionId));
+        outputs.add(new TransactionOutput(transactionId, this.receiver, amount));
         // envie o que sobrou de 'mudança' de volta ao remetente
-        outputs.add(new TransactionOutput(this.sender, getInputsSum() - amount, transactionId));
+        outputs.add(new TransactionOutput(transactionId, this.sender, getInputsSum() - amount));
 
         // TEMOS QUE ATUALIZAR A LISTA UTXO
         // as saídas serão entradas para outras transações

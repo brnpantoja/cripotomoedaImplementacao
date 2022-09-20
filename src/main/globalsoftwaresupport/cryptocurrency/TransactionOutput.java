@@ -24,10 +24,8 @@ public class TransactionOutput {
     public boolean isMine(PublicKey publicKey){
         return publicKey == receiver;
     }
-
     public String getId() {
         return id;
-
     }
 
     public String getParentTransactionId() {
@@ -53,4 +51,5 @@ public class TransactionOutput {
     public void setAmount(double amount) {
         this.amount = amount;
     }
+
 }
